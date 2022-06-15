@@ -1,0 +1,8 @@
+{% extends 'Home/index.html' %}
+{% block content %}
+    <div class="container">
+        <h2 class="py-3">You have been successfully logged out!</h2>
+        <a class="btn btn-outline-primary mr-3" role="button" href="{% url 'HomeView' %}">Home</a>
+        <a class="btn btn-outline-secondary" role="button" href="{% url 'LoginView' %}">Login</a>
+    </div>
+{% endblock content %}

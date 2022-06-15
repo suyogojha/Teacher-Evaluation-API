@@ -1,0 +1,14 @@
+{% extends 'Home/index.html' %}
+{% block content %}
+    <!-- TODO: Switch this to a modal -->
+    <div class="container">
+        <div class="row py-3 text-center">
+            <p class="lead">Are you sure you want to delete this feedback?</p>
+        </div>
+        <form method="POST">
+            {% csrf_token %}
+            <button class="btn btn-danger mr-3" type="submit">Yes, delete</button>
+            <a class="btn btn-secondary" role="button" href="{% url 'FeedbackDetailView' feedback.id %}">cancel</a>
+        </form>
+    </div>
+{% endblock content %}

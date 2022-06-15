@@ -1,0 +1,11 @@
+{% extends 'Home/index.html' %}
+{% block content %}
+    <div class="container text-center">
+        <div class="jumbotron">
+            <p class="lead center-text">Your Evaluation has been successfully submitted!</p>
+            <hr class="my-4">
+            <a class="btn btn-primary mr-2" role="button" href="{% url 'GetFeedbackView' %}">Give another Evaluation</a>
+            <a class="btn btn-secondary ml-2" role="button" href="{% url 'HomeView' %}">Home</a>
+        </div>
+    </div>
+{% endblock content %}

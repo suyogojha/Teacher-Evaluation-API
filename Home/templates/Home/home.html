@@ -1,0 +1,11 @@
+{% extends 'Home/index.html' %}
+{% block content %}
+    <div class="jumbotron text-center">
+        <h1 class="display-3">Welcome to Chmsc Teacher Evaluation </h1>
+        <p class="lead">Give Evaluation on teaching faculty at Carlos Hilado Memorial State College</p>
+        <hr class="my-4">
+        <p>If you are a student, who wishes to give evaluation, click "Enter as student"</p>
+        <a class="btn btn-primary mr-2" role="button" href="{% url 'GetFeedbackView' %}">Enter as student</a>
+        <a class="btn btn-primary ml-2" role="button" href="{% url 'LoginView' %}">Login as admin</a>
+    </div>
+{% endblock content %}

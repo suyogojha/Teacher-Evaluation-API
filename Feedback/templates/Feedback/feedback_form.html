@@ -1,0 +1,19 @@
+{% extends 'Home/index.html' %}
+{% load crispy_forms_tags %}
+{% block content %}
+    <div class="container">
+        <form method="POST">
+            {% csrf_token %}
+            <legend class="text-center mt-4">Evaluation Form</legend>
+            <p class="text-muted">* compulsory</p>
+            {{ form|crispy }}
+            <div class="form-group">
+                <button class="btn btn-success" type="submit">Submit Evaluation</button>
+            </div>
+        </form>
+        <div>
+            <a href="{% url 'HomeView' %}">Cancel</button>
+        </div>
+    </div>
+
+{% endblock content %}

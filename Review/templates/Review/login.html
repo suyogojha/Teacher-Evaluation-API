@@ -1,0 +1,15 @@
+{% extends 'Home/index.html' %}
+{% load crispy_forms_tags %}
+{% block content %}
+    <div style="margin-top: 2cm; margin-left: 10cm; margin-right: 10cm;">
+        <form method="POST">
+            {% csrf_token %}
+            <legend class="text-center mt-4">Login as admin</legend>
+            {{ form|crispy }}
+            <div class="form-group">
+                <button class="btn btn-success" type="submit">Login</button>
+            </div>
+        </form>
+        <a href="{% url 'HomeView' %}">Home</a>
+    </div>
+{% endblock content %}

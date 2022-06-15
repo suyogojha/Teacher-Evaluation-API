@@ -1,0 +1,25 @@
+{% extends 'Home/index.html' %}
+{% block content %}
+    <div class="container">
+        <h1 class="text-center py-3">Details of Evaluation</h1>
+        <div class="card p-4 m-4">
+
+            <p style="font-size: 23px;"><strong>Teacher Name:</strong><br>{{ feedback.teacher_name }}</p>
+            <p style="font-size: 23px;"><strong>Dated on:</strong><br>{{ feedback.date_submitted|date:'d F, Y H:i e' }}</p>
+            <hr class="p-0 m-0 mb-3">
+            <p style="font-size: 23px;"><strong>The teacher is punctual in coming to class:</strong><br>{{ feedback.punctuality }}</p>
+            <p style="font-size: 23px;"><strong>The teacher completes portions at the appropriate time:</strong><br>{{ feedback.portion }}</p>
+            <p style="font-size: 23px;"><strong>The teacher takes in effort to clear your doubts:</strong><br>{{ feedback.doubt }}</p>
+            <p style="font-size: 23px;"><strong>The teacher makes the class interactive:</strong><br>{{ feedback.interactive }}</p>
+            <p style="font-size: 23px;"><strong>Other Comments:</strong><br>{{ feedback.comments }}</p>
+
+            <div class="row pt-3">
+                <a class="btn btn-outline-primary ml-4 mr-4 col" role="button" href="{% url 'ListFeedbackView' %}">Back to all Evaluation</a>
+                <!-- TODO: Add a confirmation modal -->
+                <!-- TODO: Add link to delete feedback and go to all feedbacks -->
+                <a class="btn btn-outline-danger mr-4 col" role="button" href="{% url 'DeleteFeedbackView' feedback.id %}">Delete this Evaluation</a>
+                <a class="btn btn-outline-secondary mr-4 col" role="button" href="{% url 'LogoutView' %}">Logout</a>
+            </div>
+        </div>
+    </div>
+{% endblock content %}
